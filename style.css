@@ -41,6 +41,11 @@ main {
     position: relative;
 }
 
+.card:hover {
+    transform: rotateZ(91deg);
+    transition: 2s;
+}
+
 .addNew {
     position: absolute;
     bottom: 0;
