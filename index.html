@@ -12,12 +12,14 @@
             <div class="logo">
                 <div class="logoContainer">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon"><title>bookshelf</title><path d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z" /></svg>
-                    <h1>Library</h1>
                 </div>
             </div>
+            <h1>Library</h1>
         </nav>
 
-        <main></main>
+        <main>
+
+        </main>
 
         <button type="button" class="addNew">+</button>
     </div>
@@ -30,13 +32,38 @@
             <label for="author">Author</label>
             <input type="text" name="author" id="author" required>
 
-            <label for="read">Read</label>
-            <input type="text" name="read" id="read" required>
+            <div>
+                <input type="radio" name="read" id="yes" value="yes" required checked>
+                <label for="yes">Read</label>
+            </div>
+            <div>
+                <input type="radio" name="read" id="no" value="no">
+                <label for="no">Not Read</label>
+            </div>
+
+            <!-- <label for="read">Read</label>
+            <input type="radio">Yes -->
             
             <button type="button" class="addBook">Add</button>
         </form>
         <button class="close">x</button>
     </dialog>
+
+    <!-- <div class="roughMain">
+        <div class="card2">
+            <h2>Title</h2>
+            <h3>Author</h3>
+            <div class="iconContainer2">
+                <div class="readButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="read2 icon"><title>read</title><path d="M21.59,11.59L23,13L13.5,22.5L8.42,17.41L9.83,16L13.5,19.68L21.59,11.59M4,16V3H6L9,3A4,4 0 0,1 13,7C13,8.54 12.13,9.88 10.85,10.55L14,16H12L9.11,11H6V16H4M6,9H9A2,2 0 0,0 11,7A2,2 0 0,0 9,5H6V9Z" /></svg>
+                </div>
+                <div class="deleteButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="delete2 icon"><title>delete</title><path d="M19,4H15.5L14.5,3H9.5L8.5,4H5V6H19M6,19A2,2 0 0,0 8,21H16A2,2 0 0,0 18,19V7H6V19Z" /></svg>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
 
     <script src="scripts.js"></script>
 </body>
