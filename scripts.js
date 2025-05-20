@@ -2,16 +2,16 @@
 // define library array
 const myLibrary = [];
 
-// ----------------------------------------------------------------- Functions ----------------------
-
-// Constructor Function
+// ----------------------------------------------------------------- Constructor ----------------------
 function Book(title, author, read) {
-    this.id = createRandomId();
-
+    this.id = this.createRandomId();
     this.title = title;
     this.author = author;
     this.read = read;
 }
+
+// ---------------------------------------------------------------Prototype Functions--------------------
+
 // Pass in the readButton and then toggle read on its child element -> the svg
 Book.prototype.toggleRead = function(readButton) {
     const id = this.id;
@@ -19,6 +19,21 @@ Book.prototype.toggleRead = function(readButton) {
     readButton.children[0].classList.toggle("read");
     
 }
+
+Book.prototype.createRandomId = function() {
+    const min = 1000;
+    const max = 9999;
+    let id;
+    let isDuplicate;
+
+    do {
+        id = Math.floor(Math.random() * (max - min + 1)) + min;
+        isDuplicate = myLibrary.some(book => book.id === id);
+    } while (isDuplicate);
+    return id;
+}
+
+// -----------------------------------------------------------------Other Functions-----------------------------------------
 
 // Add book to myLibrary Array
 function addBookToLibrary(title, author, read) {
@@ -32,19 +47,6 @@ function addBookToLibrary(title, author, read) {
     const book = new Book(title, author, readingStatus);
     myLibrary.push(book);
     displayBooks();
-}
-
-function createRandomId() {
-    const min = 1000;
-    const max = 9999;
-    let id;
-    let isDuplicate;
-
-    do {
-        id = Math.floor(Math.random() * (max - min + 1)) + min;
-        isDuplicate = myLibrary.some(book => book.id === id);
-    } while (isDuplicate);
-    return id;
 }
 
 function createReadIcon(value) {
